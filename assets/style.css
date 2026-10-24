@@ -178,3 +178,28 @@ footer a { color: var(--muted); }
   .js .reveal { opacity: 1; }
   .js .reveal, .js .feature .phone.reveal:not(.in) { transform: none; }
 }
+
+/* Store buttons and QR popover */
+.play-group { display: inline-flex; align-items: center; background: #000; border: 1px solid rgba(255,255,255,.25); border-radius: 14px; }
+.store-play, .store-apple { flex-direction: row; align-items: center; gap: 12px; }
+.store-play span, .store-apple span { display: flex; flex-direction: column; text-align: left; }
+.store-play img, .store-apple svg { flex-shrink: 0; }
+.play-group .store-play { border: 0; min-width: 0; }
+.play-group .store-play:hover { transform: none; background: #151515; }
+.store-apple[aria-disabled="true"] { background: rgba(0,0,0,.28); color: #a5b4ab; opacity: 1; border-color: rgba(255,255,255,.12); }
+.qr-trigger { display: inline-flex; align-items: center; justify-content: center; width: 50px; height: 40px; padding: 0; margin-right: 5px; border: 0; border-left: 1px solid #353535; border-radius: 0 9px 9px 0; background: transparent; color: #c3cec7; cursor: pointer; }
+.qr-trigger:hover { color: var(--accent); background: #152019; }
+.qr-trigger:focus-visible, .store-play:focus-visible, .qr-close:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.qr-panel { position: fixed; inset: 0; margin: auto; padding: 28px 24px 24px; width: min(320px, calc(100vw - 32px)); max-height: calc(100dvh - 32px); overflow: auto; border: 1px solid #355342; border-radius: 22px; background: var(--bg-2); color: var(--fg); text-align: center; box-shadow: 0 24px 80px #0009; }
+.qr-panel::backdrop { background: #0008; }
+.qr-panel strong { display: block; padding: 0 16px; }
+.qr-panel img { margin: 20px auto 16px; background: white; height: auto; border-radius: 10px; }
+.qr-panel p { margin: 0 0 12px; color: var(--muted); font-size: 15px; }
+.qr-close { position: absolute; top: 4px; right: 4px; width: 36px; height: 36px; border: 0; border-radius: 50%; background: transparent; color: var(--muted); font: 26px/1 sans-serif; cursor: pointer; }
+.qr-close:hover { color: var(--fg); background: #ffffff0d; }
+@media (max-width: 480px) {
+  .qr-trigger { display: none; }
+  .play-group { flex: 1 1 100%; }
+  .play-group .store-play { width: 100%; }
+}
+@supports not selector(:popover-open) { .qr-trigger, .qr-panel { display: none; } }

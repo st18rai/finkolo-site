@@ -38,8 +38,19 @@
         <p class="lead">Простий облік витрат і доходів. Натиснули «−», набрали суму, вибрали категорію — решту FinKolo
           порахує сам. Без реєстрації, без реклами, дані лише на вашому телефоні.</p>
         <div class="stores">
-          <a class="store" aria-disabled="true"><small>Скоро в</small><b>Google Play</b></a>
-          <a class="store" aria-disabled="true"><small>Скоро в</small><b>App Store</b></a>
+          <div class="play-group">
+            <a class="store store-play" href="https://play.google.com/store/apps/details?id=com.st18apps.finkolo"><img src="assets/google-play.svg" width="28" height="30" alt=""><span><small>Завантажити в</small><b>Google Play</b></span></a>
+            <button class="qr-trigger" type="button" popovertarget="google-play-qr" aria-label="Показати QR-код Google Play" title="Показати QR-код Google Play"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M3 3h6v6H3zM15 3h6v6h-6zM3 15h6v6H3z"/><path d="M15 15h3v3h3v3h-6v-3h-3v-3M21 12v3M12 3v3M3 12h3M9 12h6M12 21v-3"/></svg></button>
+          </div>
+          <span class="store store-apple" aria-disabled="true"><svg width="25" height="30" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M17.05 12.54c.03 3.23 2.83 4.3 2.86 4.31-.02.08-.45 1.54-1.48 3.05-.9 1.3-1.83 2.6-3.3 2.63-1.44.03-1.9-.85-3.55-.85s-2.16.82-3.53.88c-1.42.05-2.5-1.42-3.4-2.72C2.8 17.17 1.4 12.3 3.3 9c.94-1.64 2.63-2.68 4.47-2.71 1.4-.03 2.72.94 3.57.94.85 0 2.45-1.16 4.13-.99.7.03 2.66.28 3.92 2.12-.1.06-2.34 1.36-2.32 4.18ZM14.34 4.48c.75-.9 1.26-2.15 1.12-3.4-1.08.04-2.4.72-3.17 1.62-.7.8-1.32 2.08-1.15 3.3 1.2.1 2.43-.61 3.2-1.52Z"/></svg><span><small>Скоро в</small><b>App Store</b></span></span>
+        </div>
+        <div class="qr-panel" id="google-play-qr" popover="auto" role="dialog" aria-labelledby="qr-title">
+          <button class="qr-close" type="button" popovertarget="google-play-qr" popovertargetaction="hide" aria-label="Закрити">×</button>
+            <strong id="qr-title">Завантажити FinKolo</strong>
+            <img src="assets/google-play-qr.svg" width="240" height="240" alt="QR-код: Google Play — FinKolo">
+            <p>Відскануйте камерою Android-телефона, щоб відкрити Google Play.</p>
+            <a href="https://play.google.com/store/apps/details?id=com.st18apps.finkolo">Google Play</a>
+
         </div>
         <p class="note">Android та iPhone · українська й англійська</p>
       </div>
